@@ -2,6 +2,7 @@ from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel
+from pydantic import ConfigDict
 
 
 class NotificationResponse(BaseModel):
@@ -9,5 +10,4 @@ class NotificationResponse(BaseModel):
     timestamp: datetime
     message: str
 
-    class Config:
-        extra = "forbid"
+    model_config = ConfigDict(extra="forbid")
